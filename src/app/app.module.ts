@@ -9,13 +9,15 @@ import { SearchComponent } from './search/search.component';
 import { SearchService } from './search/search.service';
 import { ArtistComponent } from './artist/artist.component';
 import { AlbumComponent } from './album/album.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     ArtistComponent,
-    AlbumComponent
+    AlbumComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

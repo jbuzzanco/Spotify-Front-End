@@ -17,7 +17,7 @@ export class SearchService {
   }
 
   getArtist(id: string) {
-    this.artistUrl = 'https://api.spotify.com/v1/artists'+id;
+    this.artistUrl = 'https://api.spotify.com/v1/artists/'+id;
     return this.http.get(this.artistUrl)
       .map(res => res.json());
 

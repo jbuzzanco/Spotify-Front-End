@@ -1,3 +1,11 @@
-<p>
-  artist works!
-</p>
+<div *ngIf="artist">
+  <header>
+    <div *ngIf="artist.images.length>0">
+      <img class="ui small image" src="{{artist.images[0].url}}">
+    </div>
+    <h1>{{artist.name}}</h1>
+    <p *ngIf="artist.genres.length > 0">
+      Genres: <span *ngFor="let genre of artist.genres" class="ui horizontal label green">{{genre}}</span>
+    </p>
+  </header>
+</div>
