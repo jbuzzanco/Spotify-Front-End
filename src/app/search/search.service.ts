@@ -9,6 +9,7 @@ export class SearchService {
   private artistsUrl: string = 'https://api.spotify.com/v1/search?type=artist&limit=10&client_id='+this.clientId+'&q=';
   private artistUrl: string;
   private albumsUrl: string;
+  private albumUrl: string;
 
   constructor(private http: Http) { }
   searchArtists(searchTerm: string) {
@@ -26,6 +27,12 @@ export class SearchService {
   getAlbums(artistId: string) {
     this.albumsUrl = 'https://api.spotify.com/v1/artists/'+artistId+'/albums';
     return this.http.get(this.albumsUrl)
+     .map(res => res.json());
+  }
+
+  getAlbum(id: string) {
+    this.albumUrl = 'https://api.spotify.com/v1/albums/'+id;
+    return this.http.get(this.albumUrl)
      .map(res => res.json());
   }
 
